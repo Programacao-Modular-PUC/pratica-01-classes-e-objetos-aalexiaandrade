@@ -1,16 +1,33 @@
 public class Pessoa {
-    char nome;
-    char sobrenome;
-    int idade;
-    double altura;
-    double peso;
-    double imc;
+    private String nome;
+    private String sobrenome;
+    private int idade;
+    private double altura;
+    private double peso;
+    private double imc;
 
+    public Pessoa(String nome, String sobrenome, int idade, double altura, double peso){
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.idade = idade;
+        this.altura = altura;
+        this.peso = peso;
+    }
+
+    public void setNome(String a){
+        this.nome = a;
+    }
+    public void setSobrenome(String a){
+        this.sobrenome = a;
+    }
     public void setAltura(double a){
         this.altura = a;
     }
+    public void setIdade(int a){
+        this.idade = a;
+    }
     public void setPeso(double a){
-        this.altura = a;
+        this.peso = a;
     }
     public double getAltura(){
         return altura;
@@ -20,29 +37,29 @@ public class Pessoa {
     }
 
     public double CalculaIMC(){
-        double calculo = getPeso() / Math.pow(getAltura(), 2);
-        return calculo;
+        double calculoIMC = getPeso() / Math.pow(getAltura(), 2);
+        return calculoIMC;
     }
-    
-    public char informaObesidade(){
+
+    double calculo = CalculaIMC();
+    public String informaObesidade(){
         if (calculo < 18.5){
-            System.out.println("Abaixo do peso.");
+            return "Abaixo do peso.";
         }
         if (calculo > 18.5 && calculo <24.9){
-            System.out.println("Peso normal.");
+            return "Peso normal.";
         }
         if (calculo > 25 && calculo <29.9){
-            System.out.println("Sobrepeso.");
+            return "Sobrepeso.";
         }
         if (calculo > 30 && calculo <34.9){
-            System.out.println("Obesidade grau 1");
+            return "Obesidade grau 1";
         }
         if (calculo > 35 && calculo <39.9){
-            System.out.println("Obesidade grau 2");
+            return "Obesidade grau 2";
         }
-        if (calculo > 40){
-            System.out.println("Obesidade grau 3.");
+        else{
+            return "Obesidade grau 3.";
         }
-        return 0;
     }
 }
