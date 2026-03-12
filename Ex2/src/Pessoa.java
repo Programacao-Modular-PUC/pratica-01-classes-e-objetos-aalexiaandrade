@@ -37,25 +37,24 @@ public class Pessoa {
     }
 
     public double CalculaIMC(){
-        double calculoIMC = getPeso() / Math.pow(getAltura(), 2);
+        double calculoIMC = getPeso() / (Math.pow(getAltura(), 2));
         return calculoIMC;
     }
 
-    double calculo = CalculaIMC();
-    public String informaObesidade(){
-        if (calculo < 18.5){
+    public String informaObesidade(double imc){
+        if (imc <= 18.5){
             return "Abaixo do peso.";
         }
-        if (calculo > 18.5 && calculo <24.9){
+        if (imc >= 18.5 && imc <= 24.9){
             return "Peso normal.";
         }
-        if (calculo > 25 && calculo <29.9){
+        if (imc >= 25 && imc <= 29.9){
             return "Sobrepeso.";
         }
-        if (calculo > 30 && calculo <34.9){
+        if (imc >= 30 && imc <= 34.9){
             return "Obesidade grau 1";
         }
-        if (calculo > 35 && calculo <39.9){
+        if (imc >= 35 && imc <= 39.9){
             return "Obesidade grau 2";
         }
         else{

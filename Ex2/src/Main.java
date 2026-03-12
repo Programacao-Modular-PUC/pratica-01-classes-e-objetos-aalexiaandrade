@@ -23,7 +23,8 @@ public class Main {
         double peso = entrada.nextDouble();
 
         Pessoa p = new Pessoa(nome, sobrenome, idade, altura, peso); //Constructor
-        System.out.println("O seu IMC e: " + p.CalculaIMC() + "\nDito isso, sua situacao e de: " + p.informaObesidade());
+        double imc = p.CalculaIMC();
+        System.out.println("O seu IMC e: " + imc + "\nDito isso, sua situacao e de: " + p.informaObesidade(imc));
 
 
 
